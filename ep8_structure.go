@@ -9,6 +9,16 @@ type Product struct {
 	discount int
 }
 
+type Thing struct {
+	Name string
+	Num  int
+}
+
+func (t *Thing) Init(name string, num int) {
+	t.Name = name
+	t.Num = num
+}
+
 func main() {
 
 	// การเรียกใช้งาน Structure
@@ -19,4 +29,9 @@ func main() {
 	product1.price = 100
 	fmt.Println(product1)
 	fmt.Println(product2)
+
+	// การเรียกใช้งาน Structure ผ่าน Function
+	t := new(Thing)
+	t.Init("Hello", 5)
+	fmt.Printf("%s: %d\n", t.Name, t.Num)
 }
